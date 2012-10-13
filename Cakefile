@@ -24,7 +24,7 @@ task 'all', 'compile target files', ->
       continue
     try
       js = fs.statSync (makePath [OUTDIR, target.path, target.file], ".js")
-      #continue if cs.mtime < js.mtime  # 更新されていなければ次のターゲットへ
+      continue if cs.mtime < js.mtime  # 更新されていなければ次のターゲットへ
     catch error
       null 
     try
